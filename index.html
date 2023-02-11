@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>offsetWidth和offsetHeight</title>
+		<style type="text/css">
+				#box{
+					width: 200px;
+					height: 200px;
+					background-color:red;
+					padding:10px;
+					margin:10px;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			// offsetWidth = width + border-left-width + border-right-width + padding-left-width + padding-right-width
+			var box = document.getElementById('box');
+			console.log(box.offsetWidth,box.offsetHeight); //offsetHeight，會算到上下border，結果是202px，原width:200px加上上下border各1px=2px
+			// 只能獲取行內屬性
+			console.log(box.style.width,box.style.height);
+			
+			// 因為offsetWidth和offsetHeight 他們是只讀，只讀意思只能讀取不能修改 
+			// box.offsetWidth = 500;
+			box.style.width = 500 + 'px'; //修改要用這樣的方式
+		</script>
+		</script>
+	</body>
+</html>
